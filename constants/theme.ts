@@ -7,6 +7,7 @@ import { Platform } from 'react-native';
 
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
+const tintColorOcean = '#2dd4bf';
 
 export const Colors = {
   light: {
@@ -25,7 +26,18 @@ export const Colors = {
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
   },
-};
+  /** Custom teal-on-deep-navy theme */
+  ocean: {
+    text: '#e8f4f8',
+    background: '#0c1929',
+    tint: tintColorOcean,
+    icon: '#7dd3c0',
+    tabIconDefault: '#5a9a8a',
+    tabIconSelected: tintColorOcean,
+  },
+} as const;
+
+export type ThemeName = keyof typeof Colors;
 
 export const Fonts = Platform.select({
   ios: {
